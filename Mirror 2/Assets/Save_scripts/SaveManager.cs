@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Newtonsoft;
+using Newtonsoft.Json;
 
 public class SaveManager : MonoBehaviour
 {
@@ -12,8 +14,8 @@ public class SaveManager : MonoBehaviour
     {
         if (PlayerPrefs.HasKey("save"))
         {
-            string json = PlayerPrefs.GetString("Save");
-            saveFile = JsonUtility.FromJson<SaveFile>(json);
+            string json = PlayerPrefs.GetString("save");
+            saveFile = JsonConvert.DeserializeObject<SaveFile>(json);
         }
         else
         {
@@ -22,13 +24,18 @@ public class SaveManager : MonoBehaviour
             saveFile.Highscore = 0;
             saveFile.hero = 0;
         }
+
+        //saving
+        string JsonSave = JsonConvert.SerializeObject(saveFile);
+        PlayerPrefs.SetString("save", JsonSave);
+        PlayerPrefs.Save();
     }
 
     // Update is called once per frame
     void Update()
     {
         //saving
-        string JsonSave = JsonUtility.ToJson(saveFile);
+        string JsonSave = JsonConvert.SerializeObject(saveFile);
         PlayerPrefs.SetString("save", JsonSave);
         PlayerPrefs.Save();
     }
