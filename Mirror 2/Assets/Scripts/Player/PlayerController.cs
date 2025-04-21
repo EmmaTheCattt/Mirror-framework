@@ -6,7 +6,7 @@ using UnityEngine.AI;
 
 public class PlayerController : NetworkBehaviour
 {
-    private Camera camera;
+    public Camera camera;
     public NavMeshAgent player;
     public GameObject Bullet;
     public GameObject tip;
@@ -22,7 +22,7 @@ public class PlayerController : NetworkBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -44,6 +44,7 @@ public class PlayerController : NetworkBehaviour
             Shot();
 
         }
+
     }
 
     [Command(requiresAuthority = false)]

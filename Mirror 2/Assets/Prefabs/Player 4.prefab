@@ -332,6 +332,7 @@ GameObject:
   - component: {fileID: 5173656278995961581}
   - component: {fileID: 1483862865555981527}
   - component: {fileID: 3678832193928753703}
+  - component: {fileID: 4209521411383281384}
   m_Layer: 8
   m_Name: Player 4
   m_TagString: Player
@@ -469,6 +470,7 @@ MonoBehaviour:
   syncDirection: 0
   syncMode: 0
   syncInterval: 0.1
+  camera: {fileID: 0}
   player: {fileID: 1351778617215003801}
   Bullet: {fileID: 1890836955628872474, guid: 23c62d13e7dfc8849b76b3c1490ae874, type: 3}
   tip: {fileID: 6947400642194670477}
@@ -519,6 +521,18 @@ MonoBehaviour:
   compressRotation: 0
   positionPrecision: 0.01
   scalePrecision: 0.01
+--- !u!114 &4209521411383281384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4730677276118127002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43dee9c320cbefb429dc585a02b69d7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5907964042536899702
 GameObject:
   m_ObjectHideFlags: 0
