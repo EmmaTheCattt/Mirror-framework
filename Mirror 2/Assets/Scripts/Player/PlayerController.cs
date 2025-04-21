@@ -13,6 +13,9 @@ public class PlayerController : NetworkBehaviour
 
     public GameObject Second_tip;
 
+    public float shoot_interval = 0.5f;
+    public float current_interval = 0;
+
     private void Awake()
     {
         camera = FindObjectOfType<Camera>();
@@ -28,6 +31,8 @@ public class PlayerController : NetworkBehaviour
     // Update is called once per frame
     void Update()
     {
+        current_interval += Time.deltaTime;
+
         if (Input.GetMouseButtonDown(1) && isLocalPlayer)
         {
             Ray ray = camera.ScreenPointToRay(Input.mousePosition);
@@ -41,8 +46,11 @@ public class PlayerController : NetworkBehaviour
 
         if (Input.GetMouseButtonDown(0) && isLocalPlayer)
         {
-            Shot();
-
+            if (shoot_interval <= current_interval)
+            {
+                Shot();
+                current_interval = 0;
+            }
         }
 
     }

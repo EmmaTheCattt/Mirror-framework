@@ -262,6 +262,8 @@ MonoBehaviour:
   Bullet: {fileID: 1890836955628872474, guid: 23c62d13e7dfc8849b76b3c1490ae874, type: 3}
   tip: {fileID: 6947400642194670477}
   Second_tip: {fileID: 0}
+  shoot_interval: 0.15
+  current_interval: 0
 --- !u!114 &1483862865555981527
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -320,6 +322,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43dee9c320cbefb429dc585a02b69d7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PLAYER_CAMERA: {fileID: 0}
 --- !u!1 &5649988697847791230
 GameObject:
   m_ObjectHideFlags: 0
