@@ -9,6 +9,7 @@ TagManager:
   - Coin
   - Ship
   - Spawner
+  - Point
   layers:
   - Default
   - TransparentFX
