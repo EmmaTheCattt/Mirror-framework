@@ -10,16 +10,35 @@ public class PlayerController : NetworkBehaviour
     public NavMeshAgent player;
     public GameObject Bullet;
     public GameObject tip;
+    public NavMeshAgent NAVIGATION;
 
     public GameObject Second_tip;
 
     public float shoot_interval = 0.5f;
     public float current_interval = 0;
 
+    public Transform[] spawns;
+    public int random_num;
+
     private void Awake()
     {
         camera = FindObjectOfType<Camera>();
+        NAVIGATION = GetComponent<NavMeshAgent>();
 
+        NAVIGATION.enabled = false;
+
+        GameObject[] SpawnPoints = GameObject.FindGameObjectsWithTag("Point");
+
+        spawns = new Transform[SpawnPoints.Length];
+
+        for (int i = 0; i < SpawnPoints.Length; i++)
+        {
+            spawns[i] = SpawnPoints[i].transform;
+        }
+
+        random_num = Random.Range(0, spawns.Length);
+        transform.position = new Vector3(spawns[random_num].position.x, transform.position.y, spawns[random_num].position.z);
+        NAVIGATION.enabled = true;
     }
 
     // Start is called before the first frame update
