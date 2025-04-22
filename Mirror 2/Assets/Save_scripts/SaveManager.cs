@@ -56,8 +56,14 @@ public class SaveManager : MonoBehaviour
 
     public void ReadStringInput(string s)
     {
-        Input = s;
-        saveFile.name = s;
+        if (s.Length == 0)
+        {
+            saveFile.name = "Player";
+        }
+        else
+        {
+            saveFile.name = s;
+        }
     }
 
     public void OnHeroChange()
