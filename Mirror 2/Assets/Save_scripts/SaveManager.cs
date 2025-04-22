@@ -13,12 +13,26 @@ public class SaveManager : MonoBehaviour
     public SaveFile saveFile;
     public string Input;
 
+    public static SaveManager Instance { get; private set; }
+
     [SerializeField] private TMP_Dropdown dropdown;
+
+    void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+            DontDestroyOnLoad(this);
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-
         if (PlayerPrefs.HasKey("save"))
         {
             string json = PlayerPrefs.GetString("save");
