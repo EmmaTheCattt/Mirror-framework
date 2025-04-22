@@ -9,6 +9,7 @@ using TMPro;
 public class SaveManager : MonoBehaviour
 {
 
+    public GameObject[] Menu_players;
     public SaveFile saveFile;
     public string Input;
 
@@ -17,6 +18,7 @@ public class SaveManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         if (PlayerPrefs.HasKey("save"))
         {
             string json = PlayerPrefs.GetString("save");
@@ -25,7 +27,7 @@ public class SaveManager : MonoBehaviour
         else
         {
             saveFile = new SaveFile();
-            saveFile.name = "";
+            saveFile.name = "Player";
             saveFile.Highscore = 0;
             saveFile.hero = 0;
         }
@@ -34,6 +36,13 @@ public class SaveManager : MonoBehaviour
         string JsonSave = JsonConvert.SerializeObject(saveFile);
         PlayerPrefs.SetString("save", JsonSave);
         PlayerPrefs.Save();
+
+        for (int i = 0; i < Menu_players.Length; i++)
+        {
+            Menu_players[i].SetActive(false);
+        }
+
+        Menu_players[saveFile.hero].SetActive(true);
     }
 
     // Update is called once per frame
@@ -54,5 +63,12 @@ public class SaveManager : MonoBehaviour
     public void OnHeroChange()
     {
         saveFile.hero = dropdown.value;
+
+        for (int i = 0; i < Menu_players.Length; i++)
+        {
+            Menu_players[i].SetActive(false);
+        }
+
+        Menu_players[saveFile.hero].SetActive(true);
     }
 }

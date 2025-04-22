@@ -13,7 +13,13 @@ public class Text_rotate : MonoBehaviour
     public Vector3 offset = new Vector3(0, 180f, 0);
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
+    {
+        Look_cam = GameObject.Find("Main Camera").GetComponent<Transform>();
+        SaveData = GameObject.Find("SaveManager").GetComponent<SaveManager>();
+    }
+
+    private void Start()
     {
         Look_cam = GameObject.Find("Main Camera").GetComponent<Transform>();
         SaveData = GameObject.Find("SaveManager").GetComponent<SaveManager>();
