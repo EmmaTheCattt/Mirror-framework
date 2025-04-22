@@ -72,6 +72,7 @@ public class PlayerController : NetworkBehaviour
             }
         }
 
+        Camera_on_player();
     }
 
     [Command(requiresAuthority = false)]
@@ -87,6 +88,11 @@ public class PlayerController : NetworkBehaviour
             Bul_v2.transform.rotation = tip.transform.rotation;
             NetworkServer.Spawn(Bul_v2);
         }
+    }
+
+    private void Camera_on_player()
+    {
+        camera_player.transform.position = new Vector3(transform.position.x, transform.position.y + 13.25f, transform.position.z - 10);
     }
 
     private void OnTriggerEnter(Collider other)
