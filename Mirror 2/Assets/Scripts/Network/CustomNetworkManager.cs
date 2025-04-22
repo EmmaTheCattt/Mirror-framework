@@ -18,7 +18,10 @@ public class CustomNetworkManager : NetworkManager
     {
         GameObject gameObject = Instantiate(avatars[message.AvatarIndex]);
         Player player = gameObject.GetComponent<Player>();
-      
+
+        //GameObject SaveManagerConvert = null;
+
+
         NetworkServer.AddPlayerForConnection(connection, gameObject);
     }
 

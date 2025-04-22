@@ -16,6 +16,7 @@ public class PlayerController : NetworkBehaviour
     public NavMeshAgent NAVIGATION;
     public TMP_Text name_text;
     public SaveManager SaveData;
+    public SaveManagerConvert OnlineData;
 
     public GameObject Second_tip;
 
@@ -33,6 +34,7 @@ public class PlayerController : NetworkBehaviour
         camera_player = FindObjectOfType<Camera>();
         NAVIGATION = GetComponent<NavMeshAgent>();
         SaveData = GameObject.Find("SaveManager").GetComponent<SaveManager>();
+        OnlineData = GameObject.Find("SaveManagerConvert").GetComponent<SaveManagerConvert>();
         Look_cam = GameObject.Find("Main Camera").GetComponent<Transform>();
 
         NAVIGATION.enabled = false;
@@ -87,21 +89,12 @@ public class PlayerController : NetworkBehaviour
             Camera_on_player();
             Name_players();
         }
-
-        TAGPLAYER();
-    }
-
-    [ClientCallback]
-    private void TAGPLAYER()
-    {
-        name_text.transform.LookAt(Look_cam);
-        name_text.transform.Rotate(offset);
     }
 
     [Command(requiresAuthority = false)]
     private void Name_players()
     {
-        name_text.text = SaveData.saveFile.name;
+        name_text.text = OnlineData.OnlineName;
     }
 
     [Command(requiresAuthority = false)]
