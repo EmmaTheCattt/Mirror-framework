@@ -8,6 +8,7 @@ public class SaveManager : MonoBehaviour
 {
 
     public SaveFile saveFile;
+    public string Input; 
 
     // Start is called before the first frame update
     void Start()
@@ -38,5 +39,16 @@ public class SaveManager : MonoBehaviour
         string JsonSave = JsonConvert.SerializeObject(saveFile);
         PlayerPrefs.SetString("save", JsonSave);
         PlayerPrefs.Save();
+    }
+
+    public void ReadStringInput(string s)
+    {
+        Input = s;
+        saveFile.name = s;
+    }
+
+    public void OnHeroChange()
+    {
+
     }
 }
