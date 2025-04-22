@@ -682,6 +682,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce8c6a074a673794fb45cf38c5ea1173, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SaveData: {fileID: 0}
+  name_text: {fileID: 3094141801576848145}
   Look_cam: {fileID: 0}
   offset: {x: 0, y: 180, z: 0}
 --- !u!1 &6947400642194670477

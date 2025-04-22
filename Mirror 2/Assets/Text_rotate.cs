@@ -17,7 +17,6 @@ public class Text_rotate : MonoBehaviour
     {
         Look_cam = GameObject.Find("Main Camera").GetComponent<Transform>();
         SaveData = GameObject.Find("SaveManager").GetComponent<SaveManager>();
-        name_text = GameObject.FindWithTag("PlayerName").GetComponent<TMP_Text>();
     }
 
     // Update is called once per frame
