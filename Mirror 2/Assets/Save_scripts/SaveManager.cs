@@ -5,6 +5,7 @@ using Newtonsoft;
 using Newtonsoft.Json;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class SaveManager : MonoBehaviour
 {
@@ -90,5 +91,10 @@ public class SaveManager : MonoBehaviour
         }
 
         Menu_players[saveFile.hero].SetActive(true);
+    }
+
+    public void StartGame()
+    {
+        SceneManager.LoadScene("GameScene");
     }
 }
