@@ -9,19 +9,17 @@ public class CustomNetworkManager : NetworkManager
     public GameObject[] avatars;
     public SaveManager saveData;
 
+
     private void Awake()
     {
         saveData = GameObject.Find("SaveManager").GetComponent<SaveManager>();
     }
 
-<<<<<<< HEAD
 
-=======
->>>>>>> parent of 2db7353 (I GIVE UP)
     void OnCreateCharactor(NetworkConnectionToClient connection, CreateCustomAvatarMessage message)
     {
         GameObject gameObject = Instantiate(avatars[message.AvatarIndex]);
-        gameObject.GetComponent<PlayerController>().name_text.text = saveData.saveFile.name;
+        gameObject.GetComponent<PlayerController>().name_text.text = message.AvatarName; 
         Player player = gameObject.GetComponent<Player>();
 
 
