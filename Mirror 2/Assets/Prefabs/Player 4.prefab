@@ -728,6 +728,8 @@ MonoBehaviour:
   Bullet: {fileID: 1890836955628872474, guid: 23c62d13e7dfc8849b76b3c1490ae874, type: 3}
   tip: {fileID: 6947400642194670477}
   NAVIGATION: {fileID: 0}
+  name_text: {fileID: 2912758950725805834}
+  SaveData: {fileID: 0}
   Second_tip: {fileID: 6736455960369634130}
   shoot_interval: 0.5
   current_interval: 0

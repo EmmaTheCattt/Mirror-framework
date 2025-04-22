@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using TMPro;
 
 public class PlayerController : NetworkBehaviour
 {
@@ -11,6 +12,8 @@ public class PlayerController : NetworkBehaviour
     public GameObject Bullet;
     public GameObject tip;
     public NavMeshAgent NAVIGATION;
+    public TMP_Text name_text;
+    public SaveManager SaveData;
 
     public GameObject Second_tip;
 
@@ -24,6 +27,7 @@ public class PlayerController : NetworkBehaviour
     {
         camera_player = FindObjectOfType<Camera>();
         NAVIGATION = GetComponent<NavMeshAgent>();
+        SaveData = GameObject.Find("SaveManager").GetComponent<SaveManager>();
 
         NAVIGATION.enabled = false;
 
@@ -75,7 +79,14 @@ public class PlayerController : NetworkBehaviour
         if (isLocalPlayer)
         {
             Camera_on_player();
+            Name_players();
         }
+    }
+
+    [Command(requiresAuthority = false)]
+    private void Name_players()
+    {
+        name_text.text = SaveData.saveFile.name;
     }
 
     [Command(requiresAuthority = false)]
