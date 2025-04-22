@@ -10,4 +10,5 @@ public class SaveFile
     public string name;
     public int Highscore;
     public int hero;
+    public bool in_menu;
 }

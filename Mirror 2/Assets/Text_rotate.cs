@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Text_rotate : MonoBehaviour
@@ -11,6 +12,8 @@ public class Text_rotate : MonoBehaviour
     public TMP_Text name_text;
     public Transform Look_cam;
     public Vector3 offset = new Vector3(0, 180f, 0);
+
+    public bool In_menu = true;
 
     // Start is called before the first frame update
     
@@ -25,6 +28,10 @@ public class Text_rotate : MonoBehaviour
     {
         transform.LookAt(Look_cam);
         transform.Rotate(offset);
-        name_text.text = SaveData.saveFile.name;
+        
+        if (SaveData.in_menu == true) 
+        {
+            name_text.text = SaveData.saveFile.name;
+        }
     }
 }

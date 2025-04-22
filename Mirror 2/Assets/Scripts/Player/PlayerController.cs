@@ -87,14 +87,7 @@ public class PlayerController : NetworkBehaviour
         if (isLocalPlayer)
         {
             Camera_on_player();
-            Name_players();
         }
-    }
-
-    [Command(requiresAuthority = false)]
-    private void Name_players()
-    {
-        name_text.text = OnlineData.OnlineName;
     }
 
     [Command(requiresAuthority = false)]

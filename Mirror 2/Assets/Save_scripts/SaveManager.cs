@@ -14,6 +14,8 @@ public class SaveManager : MonoBehaviour
     public SaveFile saveFile;
     public string Input;
 
+    public bool in_menu = true;
+
     public static SaveManager Instance { get; private set; }
 
     [SerializeField] private TMP_Dropdown dropdown;
@@ -95,6 +97,7 @@ public class SaveManager : MonoBehaviour
 
     public void StartGame()
     {
+        in_menu = false;
         SceneManager.LoadScene("GameScene");
     }
 }
