@@ -6,7 +6,7 @@ using UnityEngine.AI;
 
 public class PlayerController : NetworkBehaviour
 {
-    public Camera camera;
+    public Camera camera_player;
     public NavMeshAgent player;
     public GameObject Bullet;
     public GameObject tip;
@@ -22,7 +22,7 @@ public class PlayerController : NetworkBehaviour
 
     private void Awake()
     {
-        camera = FindObjectOfType<Camera>();
+        camera_player = FindObjectOfType<Camera>();
         NAVIGATION = GetComponent<NavMeshAgent>();
 
         NAVIGATION.enabled = false;
@@ -54,7 +54,7 @@ public class PlayerController : NetworkBehaviour
 
         if (Input.GetMouseButtonDown(1) && isLocalPlayer)
         {
-            Ray ray = camera.ScreenPointToRay(Input.mousePosition);
+            Ray ray = camera_player.ScreenPointToRay(Input.mousePosition);
             RaycastHit destination;
 
             if (Physics.Raycast(ray, out destination))
