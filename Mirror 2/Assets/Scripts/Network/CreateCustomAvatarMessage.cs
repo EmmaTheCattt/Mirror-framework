@@ -6,5 +6,6 @@ using UnityEngine;
 public struct CreateCustomAvatarMessage : NetworkMessage
 {
     public int AvatarIndex;
+    public string AvatarName;
 }
 

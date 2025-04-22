@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using TMPro;
+using UnityEngine.SocialPlatforms;
+using Telepathy;
 
 public class PlayerController : NetworkBehaviour
 {
@@ -84,8 +86,9 @@ public class PlayerController : NetworkBehaviour
         {
             Camera_on_player();
             Name_players();
-            TAGPLAYER();
         }
+
+        TAGPLAYER();
     }
 
     [ClientCallback]

@@ -37,7 +37,8 @@ public class CustomNetworkManager : NetworkManager
         CreateCustomAvatarMessage message = new()
         {
             //AvatarIndex = Random.Range(0, avatars.Length)
-            AvatarIndex = saveData.saveFile.hero
+            AvatarIndex = saveData.saveFile.hero,
+            AvatarName = saveData.saveFile.name
         };
 
         NetworkClient.Send(message);
