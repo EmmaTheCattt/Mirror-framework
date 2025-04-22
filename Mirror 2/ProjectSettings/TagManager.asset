@@ -10,6 +10,7 @@ TagManager:
   - Ship
   - Spawner
   - Point
+  - PlayerName
   layers:
   - Default
   - TransparentFX
