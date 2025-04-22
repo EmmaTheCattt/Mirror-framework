@@ -72,7 +72,10 @@ public class PlayerController : NetworkBehaviour
             }
         }
 
-        Camera_on_player();
+        if (isLocalPlayer)
+        {
+            Camera_on_player();
+        }
     }
 
     [Command(requiresAuthority = false)]
@@ -90,6 +93,7 @@ public class PlayerController : NetworkBehaviour
         }
     }
 
+    [ClientCallback]
     private void Camera_on_player()
     {
         camera_player.transform.position = new Vector3(transform.position.x, transform.position.y + 13.25f, transform.position.z - 10);
