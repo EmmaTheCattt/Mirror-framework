@@ -3,12 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using Newtonsoft;
 using Newtonsoft.Json;
+using UnityEngine.UI;
+using TMPro;
 
 public class SaveManager : MonoBehaviour
 {
 
     public SaveFile saveFile;
-    public string Input; 
+    public string Input;
+
+    [SerializeField] private TMP_Dropdown dropdown;
 
     // Start is called before the first frame update
     void Start()
@@ -49,6 +53,6 @@ public class SaveManager : MonoBehaviour
 
     public void OnHeroChange()
     {
-
+        saveFile.hero = dropdown.value;
     }
 }
