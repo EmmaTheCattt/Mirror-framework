@@ -15,7 +15,7 @@ public class CustomNetworkManager : NetworkManager
         saveData = GameObject.Find("SaveManager").GetComponent<SaveManager>();
     }
 
-    
+
     void OnCreateCharactor(NetworkConnectionToClient connection, CreateCustomAvatarMessage message)
     {
         GameObject gameObject = Instantiate(avatars[message.AvatarIndex]);

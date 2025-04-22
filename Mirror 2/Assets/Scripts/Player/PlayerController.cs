@@ -14,7 +14,7 @@ public class PlayerController : NetworkBehaviour
     public GameObject Bullet;
     public GameObject tip;
     public NavMeshAgent NAVIGATION;
-    public TMP_Text name_text;
+    [SerializeField] public TMP_Text name_text;
     public SaveManager SaveData;
     public SaveManagerConvert OnlineData;
 
@@ -22,6 +22,8 @@ public class PlayerController : NetworkBehaviour
 
     public float shoot_interval = 0.5f;
     public float current_interval = 0;
+
+    public string PlayerName;
 
     public Transform[] spawns;
     public int random_num;
@@ -87,7 +89,14 @@ public class PlayerController : NetworkBehaviour
         if (isLocalPlayer)
         {
             Camera_on_player();
+            Player_tag();
         }
+    }
+
+
+    private void Player_tag()
+    {
+        PlayerName = SaveData.saveFile.name;
     }
 
     [Command(requiresAuthority = false)]
