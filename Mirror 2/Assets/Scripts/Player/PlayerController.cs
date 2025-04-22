@@ -23,11 +23,15 @@ public class PlayerController : NetworkBehaviour
     public Transform[] spawns;
     public int random_num;
 
+    public Transform Look_cam;
+    public Vector3 offset = new Vector3(0, 180f, 0);
+
     private void Awake()
     {
         camera_player = FindObjectOfType<Camera>();
         NAVIGATION = GetComponent<NavMeshAgent>();
         SaveData = GameObject.Find("SaveManager").GetComponent<SaveManager>();
+        Look_cam = GameObject.Find("Main Camera").GetComponent<Transform>();
 
         NAVIGATION.enabled = false;
 
@@ -80,7 +84,15 @@ public class PlayerController : NetworkBehaviour
         {
             Camera_on_player();
             Name_players();
+            TAGPLAYER();
         }
+    }
+
+    [ClientCallback]
+    private void TAGPLAYER()
+    {
+        name_text.transform.LookAt(Look_cam);
+        name_text.transform.Rotate(offset);
     }
 
     [Command(requiresAuthority = false)]
