@@ -8,7 +8,6 @@ public class ShipController : NetworkBehaviour
 {
 
     public Rigidbody rb;
-    public Animator ani;
     public Collider col;
 
     public bool Player_on = false;
@@ -59,9 +58,6 @@ public class ShipController : NetworkBehaviour
         if (collision.gameObject.tag == "Player")
         {
             Player_on = true;
-            ani.SetBool("Fly", Player_on);
-            ani.SetBool("On", Player_on);
-
             The_player = collision.gameObject;
         }
     }
