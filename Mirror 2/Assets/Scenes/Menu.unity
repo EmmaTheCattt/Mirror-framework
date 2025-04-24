@@ -1454,7 +1454,9 @@ MonoBehaviour:
     name: 1
     Highscore: 1
     hero: 0
+    in_menu: 0
   Input: 
+  in_menu: 1
   dropdown: {fileID: 1251511750}
 --- !u!4 &887390156
 Transform:
@@ -2967,7 +2969,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 6fd8311faf7a1a54ab59af9b4ae7057e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
