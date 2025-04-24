@@ -2,27 +2,56 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Mirror;
+using UnityEngine.AI;
 
 public class ShipController : NetworkBehaviour
 {
 
     public Rigidbody rb;
     public Animator ani;
+    public Collider col;
 
-    public bool Player_on;
+    public bool Player_on = false;
 
     public GameObject The_player;
+
+    public Vector3 col_size;
 
     // Start is called before the first frame update
     void Start()
     {
-       
+        col_size = col.transform.localScale;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (Player_on == false && isLocalPlayer)
+        {
+            col.transform.localScale = new Vector3(2f, 2, 2f);
+        }
+        else
+        {
+            col.transform.localScale = col_size;
+        }
+
+        if (The_player.GetComponent<NetworkIdentity>().isLocalPlayer == true && The_player != null && Player_on == true)
+        {
+            The_player.GetComponent<NavMeshAgent>().enabled = false;
+            The_player.transform.position = new Vector3(transform.position.x, -100, transform.position.z);
+            The_player.GetComponent<PlayerController>().On_ship = true;
+            The_player.GetComponent<PlayerController>().camera_player.transform.position = new Vector3(transform.position.x, transform.position.y + 13.25f, transform.position.z - 10);
+
+            if (transform.position.y < 10)
+            {
+                transform.position += new Vector3(0, 0.1f * Time.deltaTime, 0);
+            }
+            else
+            {
+                transform.position += new Vector3(0, 10, 0);
+            }
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -31,6 +60,9 @@ public class ShipController : NetworkBehaviour
         {
             Player_on = true;
             ani.SetBool("Fly", Player_on);
+            ani.SetBool("On", Player_on);
+
+            The_player = collision.gameObject;
         }
     }
 }

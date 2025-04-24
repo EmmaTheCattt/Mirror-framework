@@ -23,6 +23,8 @@ public class PlayerController : NetworkBehaviour
     public float shoot_interval = 0.5f;
     public float current_interval = 0;
 
+    public bool On_ship = false;
+
     public Transform[] spawns;
     public int random_num;
 
@@ -108,7 +110,10 @@ public class PlayerController : NetworkBehaviour
     [ClientCallback]
     private void Camera_on_player()
     {
-        camera_player.transform.position = new Vector3(transform.position.x, transform.position.y + 13.25f, transform.position.z - 10);
+        if (On_ship == false)
+        {
+            camera_player.transform.position = new Vector3(transform.position.x, transform.position.y + 13.25f, transform.position.z - 10);
+        }
     }
 
     private void OnTriggerEnter(Collider other)

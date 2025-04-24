@@ -10310,6 +10310,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1420466959865206323, guid: 070787b565aecf64f87c26df4efcb0d8, type: 3}
+      propertyPath: ani
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1940230915583148542, guid: 070787b565aecf64f87c26df4efcb0d8, type: 3}
       propertyPath: m_Name
       value: Ship part
@@ -10318,7 +10322,8 @@ PrefabInstance:
       propertyPath: sceneId
       value: 2620384761
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3113948899540574385, guid: 070787b565aecf64f87c26df4efcb0d8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
