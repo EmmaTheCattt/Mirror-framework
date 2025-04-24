@@ -10314,16 +10314,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ship part
       objectReference: {fileID: 0}
-    - target: {fileID: 1940230915583148542, guid: 070787b565aecf64f87c26df4efcb0d8, type: 3}
-      propertyPath: m_TagString
-      value: Ship
-      objectReference: {fileID: 0}
     - target: {fileID: 6336427930435585608, guid: 070787b565aecf64f87c26df4efcb0d8, type: 3}
       propertyPath: sceneId
       value: 2620384761
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 8509208739424517932, guid: 070787b565aecf64f87c26df4efcb0d8, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
