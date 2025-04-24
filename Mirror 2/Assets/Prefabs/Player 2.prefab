@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5098269146512195123}
   - component: {fileID: 3231694509334936867}
   - component: {fileID: 8104488159289857488}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118,7 +118,7 @@ GameObject:
   - component: {fileID: 2395103615973521605}
   - component: {fileID: 8996624570449323570}
   - component: {fileID: 6577599964537464018}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -257,6 +257,7 @@ MonoBehaviour:
   name_text: {fileID: 8996624570449323570}
   Look_cam: {fileID: 0}
   offset: {x: 0, y: 180, z: 0}
+  In_menu: 1
 --- !u!1 &3313886169287044550
 GameObject:
   m_ObjectHideFlags: 0
@@ -269,9 +270,9 @@ GameObject:
   - component: {fileID: 8861290867509142172}
   - component: {fileID: 5714673129749850714}
   - component: {fileID: 2734591406021026053}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Canvas
-  m_TagString: Untagged
+  m_TagString: NameTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -375,7 +376,7 @@ GameObject:
   - component: {fileID: 5173656278995961581}
   - component: {fileID: 1483862865555981527}
   - component: {fileID: 3678832193928753703}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: Player 2
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -518,9 +519,11 @@ MonoBehaviour:
   NAVIGATION: {fileID: 0}
   name_text: {fileID: 8996624570449323570}
   SaveData: {fileID: 0}
+  OnlineData: {fileID: 0}
   Second_tip: {fileID: 0}
   shoot_interval: 0.5
   current_interval: 0
+  On_ship: 0
   spawns: []
   random_num: 0
   Look_cam: {fileID: 0}
@@ -583,7 +586,7 @@ GameObject:
   - component: {fileID: 8466355181517851583}
   - component: {fileID: 7910479820340602297}
   - component: {fileID: 3457338068092665300}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: Hat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -691,7 +694,7 @@ GameObject:
   - component: {fileID: 2795140227997314519}
   - component: {fileID: 3729250397253532060}
   - component: {fileID: 2472500366295160307}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -798,7 +801,7 @@ GameObject:
   - component: {fileID: 7706871141657211200}
   - component: {fileID: 4729892988381452601}
   - component: {fileID: 3375813017252597095}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: Tip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -902,7 +905,7 @@ GameObject:
   - component: {fileID: 7276593028069550241}
   - component: {fileID: 5836005716976906917}
   - component: {fileID: 5366786401723129922}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Tail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -986,7 +989,7 @@ GameObject:
   - component: {fileID: 1718682638176359699}
   - component: {fileID: 8195169886384399939}
   - component: {fileID: 2813740975211706877}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: PlayerHead
   m_TagString: Untagged
   m_Icon: {fileID: 0}

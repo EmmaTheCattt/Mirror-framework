@@ -11,6 +11,7 @@ TagManager:
   - Spawner
   - Point
   - PlayerName
+  - NameTag
   layers:
   - Default
   - TransparentFX
@@ -19,7 +20,7 @@ TagManager:
   - Water
   - UI
   - Point
-  - 
+  - Player
   - 
   - 
   - 

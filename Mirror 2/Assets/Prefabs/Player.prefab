@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5098269146512195123}
   - component: {fileID: 3231694509334936867}
   - component: {fileID: 8104488159289857488}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118,7 +118,7 @@ GameObject:
   - component: {fileID: 1977065203086028939}
   - component: {fileID: 1712132412262692044}
   - component: {fileID: 8448807732133898709}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: PlayerHead (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -223,9 +223,9 @@ GameObject:
   - component: {fileID: 1124411714190913315}
   - component: {fileID: 753606119162549551}
   - component: {fileID: 1427055287783326804}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Canvas
-  m_TagString: Untagged
+  m_TagString: NameTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -329,7 +329,7 @@ GameObject:
   - component: {fileID: 5173656278995961581}
   - component: {fileID: 1483862865555981527}
   - component: {fileID: 3678832193928753703}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -472,9 +472,11 @@ MonoBehaviour:
   NAVIGATION: {fileID: 0}
   name_text: {fileID: 3094141801576848145}
   SaveData: {fileID: 0}
+  OnlineData: {fileID: 0}
   Second_tip: {fileID: 0}
   shoot_interval: 0.5
   current_interval: 0
+  On_ship: 0
   spawns: []
   random_num: 0
   Look_cam: {fileID: 0}
@@ -537,7 +539,7 @@ GameObject:
   - component: {fileID: 6952072881996816679}
   - component: {fileID: 3094141801576848145}
   - component: {fileID: 2758086462608437758}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -676,6 +678,7 @@ MonoBehaviour:
   name_text: {fileID: 3094141801576848145}
   Look_cam: {fileID: 0}
   offset: {x: 0, y: 180, z: 0}
+  In_menu: 1
 --- !u!1 &6947400642194670477
 GameObject:
   m_ObjectHideFlags: 0
@@ -688,7 +691,7 @@ GameObject:
   - component: {fileID: 7706871141657211200}
   - component: {fileID: 4729892988381452601}
   - component: {fileID: 3375813017252597095}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: Tip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -793,7 +796,7 @@ GameObject:
   - component: {fileID: 1718682638176359699}
   - component: {fileID: 8195169886384399939}
   - component: {fileID: 2813740975211706877}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: PlayerHead
   m_TagString: Untagged
   m_Icon: {fileID: 0}

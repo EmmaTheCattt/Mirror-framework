@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5098269146512195123}
   - component: {fileID: 3231694509334936867}
   - component: {fileID: 8104488159289857488}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118,7 +118,7 @@ GameObject:
   - component: {fileID: 4125677808983869729}
   - component: {fileID: 2912758950725805834}
   - component: {fileID: 2432077636919486023}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -257,6 +257,7 @@ MonoBehaviour:
   name_text: {fileID: 2912758950725805834}
   Look_cam: {fileID: 0}
   offset: {x: 0, y: 180, z: 0}
+  In_menu: 1
 --- !u!1 &1493726418931807879
 GameObject:
   m_ObjectHideFlags: 0
@@ -269,7 +270,7 @@ GameObject:
   - component: {fileID: 6555923211522620283}
   - component: {fileID: 449189464246225691}
   - component: {fileID: 1535376627143438809}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -374,7 +375,7 @@ GameObject:
   - component: {fileID: 268028152166174289}
   - component: {fileID: 4322562787967729117}
   - component: {fileID: 7676477600082186610}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: Sphere (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -479,9 +480,9 @@ GameObject:
   - component: {fileID: 4685110854712830881}
   - component: {fileID: 4878033114054726236}
   - component: {fileID: 5939114014978072693}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Canvas
-  m_TagString: Untagged
+  m_TagString: NameTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -585,7 +586,7 @@ GameObject:
   - component: {fileID: 5173656278995961581}
   - component: {fileID: 1483862865555981527}
   - component: {fileID: 3678832193928753703}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: Player 4
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -730,9 +731,11 @@ MonoBehaviour:
   NAVIGATION: {fileID: 0}
   name_text: {fileID: 2912758950725805834}
   SaveData: {fileID: 0}
+  OnlineData: {fileID: 0}
   Second_tip: {fileID: 6736455960369634130}
   shoot_interval: 0.5
   current_interval: 0
+  On_ship: 0
   spawns: []
   random_num: 0
   Look_cam: {fileID: 0}
@@ -795,7 +798,7 @@ GameObject:
   - component: {fileID: 1844129548031676333}
   - component: {fileID: 7024470649776840105}
   - component: {fileID: 1438916049160371440}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: Gun (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -901,7 +904,7 @@ GameObject:
   - component: {fileID: 1434042954569347173}
   - component: {fileID: 8347765363806093660}
   - component: {fileID: 2291133079951324193}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: Eye_left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1006,7 +1009,7 @@ GameObject:
   - component: {fileID: 5031276205705728878}
   - component: {fileID: 7765402998539842627}
   - component: {fileID: 3585452160575933579}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: Tip2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1111,7 +1114,7 @@ GameObject:
   - component: {fileID: 8159787701360667793}
   - component: {fileID: 4244554212358571844}
   - component: {fileID: 5998651534753698715}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: Eye_right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1216,7 +1219,7 @@ GameObject:
   - component: {fileID: 7706871141657211200}
   - component: {fileID: 4729892988381452601}
   - component: {fileID: 3375813017252597095}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: Tip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1321,7 +1324,7 @@ GameObject:
   - component: {fileID: 1718682638176359699}
   - component: {fileID: 8195169886384399939}
   - component: {fileID: 2813740975211706877}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: PlayerHead
   m_TagString: Untagged
   m_Icon: {fileID: 0}
