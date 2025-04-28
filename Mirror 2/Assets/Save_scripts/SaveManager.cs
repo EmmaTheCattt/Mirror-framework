@@ -68,7 +68,10 @@ public class SaveManager : MonoBehaviour
         //saving
         string JsonSave = JsonConvert.SerializeObject(saveFile);
         PlayerPrefs.SetString("save", JsonSave);
+        PlayerPrefs.SetString("PlayerName", saveFile.name);
         PlayerPrefs.Save();
+
+        Debug.Log(PlayerPrefs.GetString("PlayerName"));
     }
 
     public void ReadStringInput(string s)

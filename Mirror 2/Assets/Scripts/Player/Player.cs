@@ -9,4 +9,6 @@ public class Player : MonoBehaviour
     public int id { get; set; }
 
     public int AvatarIndex { get; set; }
+
+    public string AvatarName { get; set; }
 }

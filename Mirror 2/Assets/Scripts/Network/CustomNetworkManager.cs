@@ -9,7 +9,6 @@ public class CustomNetworkManager : NetworkManager
     public GameObject[] avatars;
     public SaveManager saveData;
 
-
     private void Awake()
     {
         saveData = GameObject.Find("SaveManager").GetComponent<SaveManager>();
@@ -18,6 +17,9 @@ public class CustomNetworkManager : NetworkManager
     
     void OnCreateCharactor(NetworkConnectionToClient connection, CreateCustomAvatarMessage message)
     {
+
+        saveData = GameObject.Find("SaveManager").GetComponent<SaveManager>();
+
         GameObject gameObject = Instantiate(avatars[message.AvatarIndex]);
         gameObject.GetComponent<PlayerController>().name_text.text = message.AvatarName; 
         Player player = gameObject.GetComponent<Player>();
@@ -30,13 +32,17 @@ public class CustomNetworkManager : NetworkManager
     {
         base.OnStartHost();
 
+        saveData = GameObject.Find("SaveManager").GetComponent<SaveManager>();
+
         NetworkServer.RegisterHandler<CreateCustomAvatarMessage>(OnCreateCharactor);
     }
 
     public override void OnClientConnect()
     {
-        base.OnClientConnect();
 
+        saveData = GameObject.Find("SaveManager").GetComponent<SaveManager>();
+
+        base.OnClientConnect();
 
         CreateCustomAvatarMessage message = new()
         {

@@ -14,7 +14,12 @@ public class PlayerController : NetworkBehaviour
     public GameObject Bullet;
     public GameObject tip;
     public NavMeshAgent NAVIGATION;
+
     public TMP_Text name_text;
+
+    [SyncVar]
+    public string playerDisplayName;
+
     public SaveManager SaveData;
     public SaveManagerConvert OnlineData;
 
@@ -36,7 +41,6 @@ public class PlayerController : NetworkBehaviour
         camera_player = FindObjectOfType<Camera>();
         NAVIGATION = GetComponent<NavMeshAgent>();
         SaveData = GameObject.Find("SaveManager").GetComponent<SaveManager>();
-        OnlineData = GameObject.Find("SaveManagerConvert").GetComponent<SaveManagerConvert>();
         Look_cam = GameObject.Find("Main Camera").GetComponent<Transform>();
 
         NAVIGATION.enabled = false;
@@ -53,17 +57,22 @@ public class PlayerController : NetworkBehaviour
         random_num = Random.Range(0, spawns.Length);
         transform.position = new Vector3(spawns[random_num].position.x, transform.position.y, spawns[random_num].position.z);
         NAVIGATION.enabled = true;
+
+        if (isLocalPlayer) { CmdSendName(PlayerPrefs.GetString("PlayerName")); }
     }
 
     // Start is called before the first frame update
     void Start()
     {
-
+        if (isLocalPlayer) { CmdSendName(PlayerPrefs.GetString("PlayerName")); }
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        if (isLocalPlayer) { CmdSendName(PlayerPrefs.GetString("PlayerName")); }
+
         current_interval += Time.deltaTime;
 
         if (Input.GetMouseButtonDown(1) && isLocalPlayer)
@@ -123,5 +132,11 @@ public class PlayerController : NetworkBehaviour
             NetworkServer.Destroy(gameObject);
             Destroy(gameObject);
         }
+    }
+
+    [Command]
+    public void CmdSendName(string playerName)
+    {
+        playerDisplayName = playerName;
     }
 }
