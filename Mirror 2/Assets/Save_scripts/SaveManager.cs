@@ -22,6 +22,8 @@ public class SaveManager : MonoBehaviour
 
     void Awake()
     {
+        DontDestroyOnLoad(this);
+        /*
         if (Instance != null && Instance != this)
         {
             Destroy(this);
@@ -31,6 +33,7 @@ public class SaveManager : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(this);
         }
+        */
     }
 
     // Start is called before the first frame update

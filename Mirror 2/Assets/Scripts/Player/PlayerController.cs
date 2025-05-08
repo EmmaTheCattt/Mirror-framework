@@ -1,11 +1,7 @@
 using Mirror;
-using System.Collections;
-using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.AI;
-using TMPro;
-using UnityEngine.SocialPlatforms;
-using Telepathy;
 
 public class PlayerController : NetworkBehaviour
 {
@@ -71,7 +67,10 @@ public class PlayerController : NetworkBehaviour
     void Update()
     {
 
-        if (isLocalPlayer) { CmdSendName(PlayerPrefs.GetString("PlayerName")); }
+        if (isLocalPlayer) { 
+            CmdSendName(PlayerPrefs.GetString("PlayerName"));
+            name_text.name = playerDisplayName;
+        }
 
         current_interval += Time.deltaTime;
 
@@ -136,6 +135,12 @@ public class PlayerController : NetworkBehaviour
 
     [Command]
     public void CmdSendName(string playerName)
+    {
+        Command_SetPlayerName(playerName);
+    }
+
+    [ClientRpc]
+    public void Command_SetPlayerName(string playerName)
     {
         playerDisplayName = playerName;
     }

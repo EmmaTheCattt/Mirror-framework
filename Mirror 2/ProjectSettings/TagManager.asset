@@ -12,6 +12,7 @@ TagManager:
   - Point
   - PlayerName
   - NameTag
+  - SaveManager
   layers:
   - Default
   - TransparentFX

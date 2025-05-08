@@ -14,7 +14,12 @@ public class CustomNetworkManager : NetworkManager
         saveData = GameObject.Find("SaveManager").GetComponent<SaveManager>();
     }
 
-    
+    private void Update()
+    {
+        saveData = GameObject.Find("SaveManager").GetComponent<SaveManager>();
+    }
+
+
     void OnCreateCharactor(NetworkConnectionToClient connection, CreateCustomAvatarMessage message)
     {
 
@@ -48,7 +53,7 @@ public class CustomNetworkManager : NetworkManager
 
         NetworkClient.Send(message);
     }
-    [ClientRpc]
+
     private CreateCustomAvatarMessage SetNames()
     {
         CreateCustomAvatarMessage message = new()
