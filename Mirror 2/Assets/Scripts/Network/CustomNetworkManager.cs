@@ -44,13 +44,19 @@ public class CustomNetworkManager : NetworkManager
 
         base.OnClientConnect();
 
+        CreateCustomAvatarMessage message = SetNames();
+
+        NetworkClient.Send(message);
+    }
+    [ClientRpc]
+    private CreateCustomAvatarMessage SetNames()
+    {
         CreateCustomAvatarMessage message = new()
         {
             //AvatarIndex = Random.Range(0, avatars.Length)
             AvatarIndex = saveData.saveFile.hero,
             AvatarName = saveData.saveFile.name
         };
-
-        NetworkClient.Send(message);
+        return message;
     }
 }
