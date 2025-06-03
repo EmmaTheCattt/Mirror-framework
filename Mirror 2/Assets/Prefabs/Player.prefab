@@ -471,6 +471,7 @@ MonoBehaviour:
   tip: {fileID: 6947400642194670477}
   NAVIGATION: {fileID: 0}
   name_text: {fileID: 3094141801576848145}
+  playerDisplayName: 
   SaveData: {fileID: 0}
   OnlineData: {fileID: 0}
   Second_tip: {fileID: 0}
@@ -675,7 +676,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SaveData: {fileID: 0}
-  name_text: {fileID: 3094141801576848145}
+  name_text: {fileID: 0}
   Look_cam: {fileID: 0}
   offset: {x: 0, y: 180, z: 0}
   In_menu: 1

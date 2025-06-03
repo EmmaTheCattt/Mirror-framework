@@ -29,9 +29,11 @@ public class Text_rotate : MonoBehaviour
         transform.LookAt(Look_cam);
         transform.Rotate(offset);
         
+        
         if (SaveData.in_menu == true) 
         {
             name_text.text = SaveData.saveFile.name;
         }
+        
     }
 }
