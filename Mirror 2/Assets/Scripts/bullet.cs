@@ -1,3 +1,4 @@
+using Mirror;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
@@ -7,6 +8,8 @@ public class bullet : MonoBehaviour
 {
     public float Speed = 5;
     public Collider Col;
+    public PlayerController controller;
+    public string owner;
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +32,17 @@ public class bullet : MonoBehaviour
 
         if (other.CompareTag("Bullet"))
         {
+            Destroy(gameObject);
+        }
+
+        if (other.CompareTag("Player")) 
+        {
+            controller.highscore++;
+            controller.saveFile.Highscore = controller.highscore;
+            Debug.Log(controller.highscore);
+            NetworkServer.Destroy(other.gameObject);
+            NetworkServer.Destroy(gameObject);
+            Destroy(other.gameObject);
             Destroy(gameObject);
         }
     }

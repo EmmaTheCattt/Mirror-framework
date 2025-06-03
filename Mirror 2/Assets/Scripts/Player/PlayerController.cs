@@ -1,4 +1,5 @@
 using Mirror;
+using Newtonsoft.Json;
 using TMPro;
 using UnityEngine;
 using UnityEngine.AI;
@@ -10,6 +11,8 @@ public class PlayerController : NetworkBehaviour
     public GameObject Bullet;
     public GameObject tip;
     public NavMeshAgent NAVIGATION;
+
+    public bullet Bul_scipt;
 
     public TMP_Text name_text;
 
@@ -31,6 +34,10 @@ public class PlayerController : NetworkBehaviour
 
     public Transform Look_cam;
     public Vector3 offset = new Vector3(0, 180f, 0);
+
+    public int highscore = 0;
+
+    public SaveFile saveFile;
 
     private void Awake()
     {
@@ -66,9 +73,24 @@ public class PlayerController : NetworkBehaviour
     // Update is called once per frame
     void Update()
     {
+        saveFile.Highscore = highscore;
+        //saving
+        string JsonSave = JsonConvert.SerializeObject(saveFile);
+        PlayerPrefs.SetString("save", JsonSave);
+        PlayerPrefs.SetString("PlayerName", saveFile.name);
+        PlayerPrefs.SetInt("Highscore", saveFile.Highscore);
+        PlayerPrefs.Save();
 
-        if (isLocalPlayer) { 
-            CmdSendName(PlayerPrefs.GetString("PlayerName"));
+        Debug.Log(highscore);
+
+        if (isLocalPlayer) {
+            if (PlayerPrefs.HasKey("save"))
+            {
+                string json = PlayerPrefs.GetString("save");
+                saveFile = JsonConvert.DeserializeObject<SaveFile>(json);
+            }
+
+            CmdSendName(saveFile.name);
             name_text.name = playerDisplayName;
         }
 
@@ -105,6 +127,8 @@ public class PlayerController : NetworkBehaviour
     {
         GameObject Bul = Instantiate(Bullet, new Vector3(tip.transform.position.x, tip.transform.position.y, tip.transform.position.z), Quaternion.identity);
         Bul.transform.rotation = tip.transform.rotation;
+        Bul_scipt = Bul.GetComponent<bullet>();
+        Bul_scipt.controller = GetComponent<PlayerController>();
         NetworkServer.Spawn(Bul);
 
         if (Second_tip != null)
@@ -128,14 +152,17 @@ public class PlayerController : NetworkBehaviour
     {
         if (other.CompareTag("Bullet"))
         {
+            /*
             NetworkServer.Destroy(gameObject);
             Destroy(gameObject);
+            */
         }
     }
 
     [Command]
     public void CmdSendName(string playerName)
     {
+
         Command_SetPlayerName(playerName);
     }
 
